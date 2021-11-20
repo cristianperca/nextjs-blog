@@ -11,6 +11,9 @@ export async function getStaticProps() {
 
 function HomePage({ posts }) {
   console.log('[HomePage] render:', posts);
+  const backendUrl = process.env.BACKEND_URL
+  console.log('[HomePage] backendUrl:', backendUrl);
+  
   return (
     <>
       <Head>
@@ -21,7 +24,9 @@ function HomePage({ posts }) {
         <ul>
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link href={`/posts/${post.slug}`}>
+              {/* <Link href={`/posts/${post.slug}`}> */}
+              {/* <Link href="/posts/[slug]" as={`process.env.BACKEND_URL/posts/${post.slug}`}> */}
+              <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
                 <a>{post.title}</a>
               </Link>
             </li>

@@ -1,5 +1,6 @@
 const prod = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  'process.env.BACKEND_URL': prod ? '/nextjs-blog' : '',
+  'process.env.BACKEND_URL': '/nextjs-blog',
+  // 'process.env.BACKEND_URL': prod ? '/nextjs-blog' : '',
 }

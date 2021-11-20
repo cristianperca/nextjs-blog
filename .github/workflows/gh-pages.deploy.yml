@@ -22,13 +22,17 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /nextjs-blog
 
       - name: Export static files
         run: npm run export
-
+        env:
+          NEXT_PUBLIC_BASE_PATH: /nextjs-blog
+          
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
-        
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:

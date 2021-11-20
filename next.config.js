@@ -5,5 +5,7 @@
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  assetPrefix: !debug ? '/nextjs-blog/' : '',
+  // assetPrefix: !debug ? '/nextjs-blog/' : '',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
 }
